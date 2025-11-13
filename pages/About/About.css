@@ -1,0 +1,897 @@
+/* ✅ UNIVERSAL RESET + OVERFLOW FIX */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --gold: #cba6f7 !important;  /* 💜 Updated main accent color */
+  --dark-overlay: rgba(6,10,18,0.75);
+  --muted: #666;
+  /* --accent: linear-gradient(90deg,#00f0ff,#ff00c8); */
+  --radius: 14px;
+  font-family: "Open Sans", sans-serif;  
+  font-size: clamp(14px, 1.2vw, 18px);
+  --main-text-color: #6b078a !important;             
+}
+
+/* Use the new colour variable for body or general text */
+body {
+  color: var(--main-text-color);
+}
+
+/* ---------- HERO SLIDER ---------- */
+.hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.slides-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 1.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Caption */
+.slide-caption {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  padding: 24px 32px;
+  border-radius: 12px;
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, #00f0ff, #ff00c8) 1;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  max-width: 520px;
+  text-align: right;
+  animation: fadeSlideUp 1.2s ease forwards;
+}
+
+.slide-title {
+  color: var(--gold);
+  font-family: "Poppins", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slide-sub {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Caption animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Indicators */
+.hero-indicators {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.2);
+}
+
+/* ---------- GENERAL SECTIONS ---------- */
+.section {
+  padding: 70px 8%;
+  background: #fff;
+  color: #111;
+  box-sizing: border-box;
+}
+
+.gold { 
+  color: var(--gold); /* 💜 Updated */
+}
+
+.lead { 
+  color: var(--muted); 
+  font-size:1.05rem; 
+  
+  line-height:1.7; 
+}
+
+/* ---------- STORY ---------- */
+.story-section { padding-top: 50px; }
+
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.story-image-wrap img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(12,20,40,0.08);
+}
+
+.story-card {
+  background: linear-gradient(180deg,#dfdde0, #fcfcfd);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(8,12,20,0.06);
+}
+.story-card .h2{
+  color: #6b078a !important;
+}
+
+
+.cards-row {
+  display:flex;
+  gap:20px;
+  margin-top:18px;
+  flex-wrap: wrap;
+}
+
+.mini-card {
+  flex:1;
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 8px 18px rgba(8,12,20,0.04);
+}
+
+.mini-card h4 { 
+  margin:0 0 8px 0; 
+  color: #f4f3f5; 
+}
+
+.journey { margin-top:18px; }
+
+.image-grid {
+  margin-top:28px;
+  display:flex;
+  gap:30px; 
+  overflow-x:auto;
+  padding-bottom:8px;
+  scroll-snap-type: x mandatory;
+}
+
+.image-grid img {
+  width:380px;
+  height:300px;
+  object-fit:cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(133, 30, 173, 0.06);
+  scroll-snap-align: start;
+}
+/* ---------- OUR STORY 3D ANIMATED BACKGROUND ---------- */
+.story-section {
+  position: relative;
+  overflow: hidden;
+  /* background: linear-gradient(135deg, #ffffff, #f5edff, #ffffff); */
+  background-size: 400% 400%;
+  animation: storyBgMove 12s ease-in-out infinite;
+}
+
+@keyframes storyBgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* subtle floating glow effect behind story content */
+.story-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(203,166,247,0.18) 0%, transparent 70%);
+  animation: storyGlow 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes storyGlow {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.6; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.4; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.6; }
+}
+
+.story-inner, .story-card {
+  position: relative;
+  z-index: 2; /* keep text and images above animation */
+}
+
+
+/* ---------- TEAM ---------- */
+.team-section { padding-top: 40px; 
+width: 100%;}
+.center { text-align:center; }
+
+.team-card-row {
+  display:flex;
+  gap: 28px;    
+  margin-top: 26px;
+  align-items: flex-start;
+  flex-wrap:wrap;
+  
+}
+
+.founders-card {
+  flex:1.2;
+  min-width: 300px;
+  background:#fff;
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(8,12,20,0.06);
+}
+
+.founders-photos {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.circle-photo {
+  text-align:center;
+}
+
+.circle-photo img {
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid rgba(203,166,247,0.3); /* 💜 matched tone */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.founder-note { margin-top:12px; color:var(--muted); }
+
+.experts-grid {
+  flex:1;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  min-width:260px;
+}
+
+.expert-card {
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  flex:1 1 180px;
+  text-align:center;
+  box-shadow: 0 10px 26px rgba(8,12,20,0.05);
+}
+
+.expert-card img {
+  width: 120px;
+  height:140px;
+  object-fit:cover;
+  border-radius:50px;
+  margin-bottom:12px;
+}
+
+.team-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff, #f4e9ff, #ffffff);
+  background-size: 400% 400%;
+  animation: teamBgMove 14s ease-in-out infinite;
+}
+
+@keyframes teamBgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* floating light orb behind team cards */
+.team-section::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(203,166,247,0.22) 0%, transparent 70%);
+  animation: teamGlow 9s linear infinite;
+  z-index: 0;
+}
+
+@keyframes teamGlow {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.5; }
+  50% { transform: rotate(180deg) scale(1.15); opacity: 0.35; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.5; }
+}
+
+.team-card-row,
+.founders-card,
+.expert-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- VALUES ---------- */
+.values-section {
+  background: linear-gradient(135deg,#6b078a 0%, #0b1b2b 50%, #051428 100%);
+  color: #fff;
+  padding: 56px 8%;
+}
+
+.values-inner {
+  display:flex;
+  gap:30px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.values-copy { flex:1; min-width:260px; }
+
+.values-grid {
+  display:grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap:18px;
+  flex:1.6;
+}
+
+.value-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border-left:4px solid var(--gold);
+}
+
+.value-icon {
+  width:38px;height:38px;border-radius:8px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:700;background:rgba(255,255,255,0.06);margin-bottom:8px;
+}
+
+/* ---------- JOIN / CAREERS ---------- */
+.join-section {
+  width: 100%;
+  background: #fff;
+  padding: 48px 8%;
+}
+
+.join-inner {
+  display:flex;
+  gap:26px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg,#cba6f7,#b388eb); /* 💜 Updated gradient tone */
+  color:#071225;
+  border:none;
+  padding:14px 32px;
+  font-weight:700;
+  border-radius:999px;
+  cursor:pointer;
+  box-shadow: 0 12px 30px rgba(203,166,247,0.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+  margin-top:16px;
+}
+
+.cta-btn:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 22px 40px rgba(203,166,247,0.3); 
+}
+
+.join-stats { 
+  display:flex; 
+  gap:22px; 
+  align-items:center; 
+  color:var(--muted); 
+  flex-wrap: wrap; 
+}
+
+.join-stats div { text-align:center; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh;
+  }
+  .slide-caption {
+    right: 4%;
+    bottom: 6%;
+    padding: 18px;
+    max-width: 80%;
+  }
+  .slide-title {
+    font-size: 2rem;
+  }
+  .slide-sub {
+    font-size: 0.95rem;
+  }
+  .story-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 55vh;
+  }
+  .slide-caption {
+    right: 5%;
+    bottom: 5%;
+    padding: 14px;
+    max-width: 85%;
+  }
+  .slide-title {
+    font-size: 1.6rem;
+  }
+  .slide-sub {
+    font-size: 0.85rem;
+  }
+}
+.about-container h2 {
+ color: #be91f5 !important;
+}
+/* .our-story-section,
+.team-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px; 
+}
+
+.our-story-content,
+.team-content {
+  position: relative;
+  z-index: 1;
+} */
+
+
+/* ===== OUR STORY SECTION ===== */
+/* ====================================================== */
+/* 🌌 OUR STORY - Glass Card with Video Background */
+/* ====================================================== */
+/* .story-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+} */
+.story-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* allow expansion beyond screen */
+  overflow: visible; /* show entire glass card */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6rem 8%; /* more space top and bottom */
+  color: #fff;
+}
+
+.story-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.glass-card {
+  max-width: 600px;
+  padding: 2.5rem 3rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎥 Background Video */
+.story-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45);
+  z-index: 0;
+}
+
+/* 🔹 Optional dark overlay for text clarity */
+.story-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 20, 0.35);
+  z-index: 1;
+}
+
+/* 🧊 Glass Effect Card */
+.glass-card {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+  padding: 2.5rem 3rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.3s ease-out;
+}
+
+/* Headings & Text */
+.story-title {
+  font-size: 2.4rem;
+  color: #cba6f7;
+  margin-bottom: 1.2rem;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #eee;
+}
+
+/* Mission & Vision Cards */
+.story-mission-vision {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.mini-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.mini-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mini-card h4 {
+  color: #cba6f7;
+  margin-bottom: 0.5rem;
+}
+
+.story-journey h4 {
+  color: #cba6f7;
+  margin-bottom: 0.5rem;
+}
+
+/* Smooth animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+/* @media (max-width: 768px) {
+  .story-section {
+    height: auto;
+    padding: 6rem 1.5rem;
+    justify-content: center;
+  }
+  .glass-card {
+    width: 100%;
+    padding: 2rem;
+  }
+} */
+@media (max-width: 768px) {
+  .story-section {
+    padding: 4rem 1.5rem;         /* reduce left padding */
+    justify-content: center;      /* center the card */
+    align-items: center;
+  }
+
+  .glass-card {
+    margin: 0 auto;               /* centers card horizontally */
+    max-width: 90%;               /* adjusts width for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  .story-section {
+    padding: 2rem 1.5rem; /* ↓ reduced vertical space */
+    justify-content: center;
+    align-items: flex-start; /* lifts card upward */
+  }
+
+  .glass-card {
+    margin-top: -1rem; /* lift slightly upward */
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-section {
+    padding-top: 1.5rem; /* smaller top gap for mobile */
+    padding-bottom: 3rem;
+  }
+}
+
+/* ===== TEAM SECTION (for round images) ===== */
+.circle-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.circle-photo img:hover {
+  transform: scale(1.05);
+}
+
+.circle-photo h5 {
+  color: #fff;
+  margin-top: 0.8rem;
+}
+
+.circle-photo p {
+  color: #ddd;
+  font-size: 0.9rem;
+}
+/* 🎥 Transparent card design over video */
+.founders-card{
+ 
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+  backdrop-filter: blur(10px); /* soft glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #fff; /* text readable on video */
+}
+
+.circle-photo img {
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.founder-note,
+
+.circle-photo p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.circle-photo h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ====================================================== */
+/* 👥 OUR TEAM - Flip Card Style with Background Video */
+/* ====================================================== */
+.team-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem 2rem;
+}
+
+.team-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45);
+  z-index: 0;
+}
+
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 20, 0.4);
+  z-index: 1;
+}
+
+.team-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+}
+
+.team-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem; /* ⬆️ increased gap for more spacing between cards */
+  margin-top: 3rem;
+}
+
+
+/* 🔹 Each Card */
+.team-card {
+  background: transparent;
+  width: 260px;
+  height: 340px;
+  perspective: 1000px;
+}
+
+/* Inner Container - handles the flip */
+.team-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s ease;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back shared styles */
+.team-card-front,
+.team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backface-visibility: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Front Side */
+.team-card-front img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid #cba6f7;
+}
+
+.team-card-front h3 {
+  color: #cba6f7;
+  margin-bottom: 0.3rem;
+}
+
+/* Back Side */
+.team-card-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.team-card-back h3 {
+  color: #cba6f7;
+  margin-bottom: 0.8rem;
+}
+
+.team-card-back p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f2f2f2;
+}
+
+.team-card-back .exp {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #cba6f7;
+  font-style: italic;
+}
+
+.founder-note {
+  margin-top: 3rem;
+  color: #e8e8e8;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .team-card {
+    width: 220px;
+    height: 300px;
+  }
+}
+

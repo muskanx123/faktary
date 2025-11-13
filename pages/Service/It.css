@@ -1,0 +1,461 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #6b078a 0%, #0b1b2b 50%, #051428 100%);
+  --accent: #cba6f7;
+  --max-width: 1100px;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--accent);
+  background: var(--bg-gradient);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* PAGE */
+.it-page {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* HERO */
+.it-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.it-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.it-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+/* HERO */
+.it-hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White heading */
+}
+
+.it-hero-text .lead {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* ✅ White text for hero paragraph */
+  opacity: 0.95;
+}
+
+/* HERO BUTTONS */
+.btn-primary {
+  /* background: #cba6f7; ✅ Brighter visible button */
+  color: #d8dbdf;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 0 20px rgba(203, 166, 247, 0.4);
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  color: #6b078a;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.btn-ghost {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  /* color: #cba6f7; */
+  transform: scale(1.05);
+}
+
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(203, 166, 247, 0.15);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  /* color: var(--accent); */
+  transition: all 0.25s ease;
+}
+
+
+
+/* ✅ All section headings white */
+.it-section h2,
+.section-title,
+.section-heading,
+.section-header h2,
+.section-header h3 {
+  font-size: 2.3rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff; /* White headings for all sections */
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.section-sub {
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+}
+
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(203, 166, 247, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  transition: 0.25s ease;
+}
+
+.service-icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(3, 6, 12, 0.45);
+}
+
+/* WHY CHOOSE */
+/* =======================
+   WHY CHOOSE OUR IT SUPPORT SECTION
+========================== */
+.it-why {
+  position: relative;
+  background: url("/assets/t.jpg") center/cover no-repeat; /* 🔹 Your image path */
+  color: #fff;
+  padding: 100px 10%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Dark overlay for text readability */
+.it-why::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 10, 25, 0.75); /* dark tint overlay */
+  z-index: 0;
+}
+
+.it-why .container {
+  position: relative;
+  z-index: 2;
+}
+
+.it-why h2 {
+  color: #cba6f7;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(203, 166, 247, 0.7);
+}
+
+.it-why .checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.it-why .checklist li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.it-why .stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.it-why .stat {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.it-why .stat:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.it-why .stat .num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #cba6f7;
+  display: block;
+}
+
+.it-why .stat .label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =======================
+   RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+  .it-why {
+    padding: 80px 8%;
+  }
+  .it-why h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .it-why .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .it-why {
+    padding: 70px 6%;
+  }
+  .it-why h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ABOUT */
+.it-about {
+  text-align: left;
+}
+
+.it-about h2 {
+  color: #ffffff; /* ✅ White heading */
+}
+
+.it-about p {
+  margin-top: 0.8rem;
+  opacity: 0.95;
+}
+
+
+
+/* CTA BUTTON (reuse same style) */
+.it-cta-button {
+  background: #cba6f7;
+  color: #0b1b2b;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
+}
+
+.it-cta-button:hover {
+  background: #fff;
+  color: #6b078a;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+
+/* ANIMATIONS */
+.zoom-section,
+.zoom-card {
+  opacity: 0;
+  transform: scale(0.9) translateY(40px);
+  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+.zoom-show {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+/* HERO ANIMATION */
+.it-hero-inner h1,
+.it-hero-inner p,
+.it-hero-inner .cta-row {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: heroZoom 1s ease-out forwards;
+}
+
+.it-hero-inner h1 {
+  animation-delay: 0.3s;
+}
+.it-hero-inner p {
+  animation-delay: 0.6s;
+}
+.it-hero-inner .cta-row {
+  animation-delay: 0.9s;
+}
+
+@keyframes heroZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover depth */
+.service-card:hover,
+.stat:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 0 20px rgba(203, 166, 247, 0.3);
+}
+
+/* CTA SECTION */
+.it-cta-section {
+  background: linear-gradient(135deg, #6b078a 0%, #0b1b2b 50%, #051428 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.it-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.it-cta-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.it-cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.it-cta-button {
+  background: #cba6f7;
+  color: #0b1b2b;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
+}
+
+.it-cta-button:hover {
+  background: #fff;
+  color: #6b078a;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* ✅ Responsive CTA */
+@media (max-width: 768px) {
+  .it-cta-section {
+    padding: 60px 15px;
+  }
+
+  .it-cta-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .it-cta-section p {
+    font-size: 1rem;
+  }
+
+  .it-cta-button {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .it-cta-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .it-cta-section p {
+    font-size: 0.9rem;
+  }
+}

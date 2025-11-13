@@ -1,0 +1,221 @@
+:root {
+  --gold:   #ffd700;
+  --purple-dark: #2e0066;
+  --purple-light: #8a2be2;
+  --gradient: linear-gradient(180deg, #2e0066, #ffb347);
+}
+
+
+.reach-container {
+  background:
+    linear-gradient(rgba(20, 0, 40, 0.7), rgba(50, 0, 20, 0.8)),
+    url('/assets/office.png') center/cover no-repeat;
+  color: white;
+  min-height: 100vh;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif; /* ✅ as you said */
+}
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-bottom: 40px;
+}
+
+.reach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-form,
+.info-side {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.contact-form h2,
+.info-side h2 {
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.contact-form input,
+.contact-form textarea,
+.subscribe-box input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ddd;
+}
+
+.contact-form button,
+.subscribe-box button {
+  background: var(--gold);
+  border: none;
+  color: #222;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover,
+.subscribe-box button:hover {
+  background: white;
+  color: var(--purple-dark);
+}
+
+/* Map */
+.map-box iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* Social */
+.social-box .social-icons {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: var(--gold);
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .reach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form,
+  .info-side {
+    text-align: center;
+  }
+}
+
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.country-select {
+  flex: 0 0 35%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+}
+
+.country-select:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.country-select option {
+  background: #9a979b;
+  color: #fff;
+  padding: 10px;
+}
+
+.phone-input input[type="tel"] {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.phone-input input[type="tel"]::placeholder {
+  color: #ddd;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .phone-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .country-select {
+    width: 100%;
+  }
+}
+/* Fix navbar overlap + better top spacing */
+.reach-container {
+  background:
+    linear-gradient(rgba(20, 0, 40, 0.7), rgba(50, 0, 20, 0.8)),
+    url('/assets/office.png') center/cover no-repeat;
+  color: white;
+  min-height: 100vh;
+  padding: 120px 20px 60px; /* 🔥 increased top padding */
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  z-index: 0;
+}
+
+/* Optional: if navbar uses fixed positioning */
+.navbar {
+  z-index: 9999;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}

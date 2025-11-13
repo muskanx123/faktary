@@ -1,0 +1,91 @@
+.admin-panel {
+  padding: 60px 8%;
+  background: #f8f9fb;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.upload-form input,
+.upload-form textarea,
+.upload-form select {
+  margin-bottom: 15px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.upload-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.upload-form button {
+  background: #6b46c1;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.upload-form button:hover {
+  background: #4b25a0;
+}
+
+/* --- Preview Grid --- */
+.resource-preview h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.admin-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.admin-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.admin-card h4 {
+  margin: 10px 0 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.admin-card p {
+  color: #777;
+  font-size: 0.9rem;
+}
