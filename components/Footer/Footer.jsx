@@ -40,27 +40,47 @@ const Footer = () => {
       {/* Main Columns */}
       <div className="footer-columns">
         {/* Contact Info */}
-        <div className="footer-col">
-          <h3>Contact Us</h3>
-          <p>
-            <strong>Office 1:</strong> OFFICE NO 105, 1st FLOOR, OPTIONS PRIMO
-            PREMISES, PLOT NO X-21, MAROL INDUSTRIAL ESTATE, MIDC CROSS ROAD NO
-            21, ANDHERI EAST, MUMBAI MH 400093
-          </p>
-          <p>
-            <strong>Office 2:</strong> OFFICE NO 328, PLOT NO 12 VARDHAMAN BIG V
-            PLAZA, COMMUNITY CENTRE PRITAMPURA, DELHI 110034
-          </p>
-          <p>
-            <strong>Office 3:</strong> 9/13, 1st FLOOR, MASS TOWER, KANNAIAH
-            STREET, DARMAPURAM, T NAGAR, CHENNAI, TN-600017
-          </p>
-          <p>
-            📧{" "}
-            <a href="mailto:faktarys@gmail.com">faktarys@gmail.com</a>
-          </p>
-          <p>📞 +91 7597460456</p>
-        </div>
+       <div className="footer-col">
+  <h3>Contact Us</h3>
+
+  <p>
+    <strong>Office 1:</strong>{" "}
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=OFFICE+NO+105,+1st+FLOOR,+OPTIONS+PRIMO+PREMISES,+PLOT+NO+X-21,+MAROL+INDUSTRIAL+ESTATE,+MIDC+CROSS+ROAD+NO+21,+ANDHERI+EAST,+MUMBAI+MH+400093"
+      target="_blank"
+      rel="noreferrer"
+    >
+      OFFICE NO 105, 1st FLOOR, OPTIONS PRIMO PREMISES, PLOT NO X-21,
+      MAROL INDUSTRIAL ESTATE, MIDC CROSS ROAD NO 21, ANDHERI EAST,
+      MUMBAI MH 400093
+    </a>
+  </p>
+
+  <p>
+    <strong>Office 2:</strong>{" "}
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=OFFICE+NO+328,+PLOT+NO+12+VARDHAMAN+BIG+V+PLAZA,+COMMUNITY+CENTRE+PRITAMPURA,+DELHI+110034"
+      target="_blank"
+      rel="noreferrer"
+    >
+      OFFICE NO 328, PLOT NO 12 VARDHAMAN BIG V PLAZA, COMMUNITY CENTRE
+      PRITAMPURA, DELHI 110034
+    </a>
+  </p>
+
+  <p>
+    <strong>Office 3:</strong>{" "}
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=9/13,+1st+FLOOR,+MASS+TOWER,+KANNAIAH+STREET,+DARMAPURAM,+T+NAGAR,+CHENNAI,+TN-600017"
+      target="_blank"
+      rel="noreferrer"
+    >
+      9/13, 1st FLOOR, MASS TOWER, KANNAIAH STREET, DARMAPURAM, T NAGAR,
+      CHENNAI, TN-600017
+    </a>
+  </p>
+</div>
+
 
         {/* Our Services */}
         <div className="footer-col">
