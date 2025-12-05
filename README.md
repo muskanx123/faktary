@@ -1,16 +1,6 @@
-# React + Vite
+This project is a professional React + Vite based website and friendly to all devices created for Faktary E-Solution, an IT service and digital solutions company.  
+The goal of this project is to build a clean, modern, responsive, and high-performance web platform that showcases the company’s services, vision, and capabilities.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website is designed to represent the brand identity of Faktary E-Solution and provide visitors with clear information about the IT services offered by the company, such as software development, digital transformation, technical support, and web solutions.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Using React and Vite ensures fast loading, smooth user experience, reusable components, and an optimized code structure suitable for future expansion.
