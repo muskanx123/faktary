@@ -146,7 +146,7 @@ Faktary E-Solutions has been recognized for its excellence in innovation and ser
         <div className="team-card-inner">
           {/* Front Side */}
           <div className="team-card-front">
-            <img src="/images/boss1.jpg" alt="Founder 1" />
+           <img src="/assets/images/boss1.jpg" alt="" />
             <h3>John Doe</h3>
             <p>Founder & CEO</p>
           </div>
